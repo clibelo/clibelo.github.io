@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Insulin Sensitivity Factor Calculator</title>
+		<link rel="shortcut icon" type="image/jpeg" href="https://media.istockphoto.com/id/1346728317/vector/diabetes-awareness-ribbon-isolated-symbol-of-support-and-solidarity-diabetes-illness-vector.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=ZRhMtArm14gHVqAThNSz_y-loVEoYVd4YRr7y68x5eQ="/>
+	</head>
+	<body>
+		<h1>What Is Your Insulin Sensitivity Factor?</h1>
+		<p> 
+			Your insulin sensitivity factor (ISF), also sometimes called a "correction factor" tells you how many points in milligrams per deciliter (mg/dL), your blood sugar will drop for each unit of insulin you take. Your ISF is used to help determine how much insulin you need daily.
+			<br><br>
+			There are two formulae used to calculate your ISF. The first applies if you use regular insulin such as Humulin or Novolin. The other applies if you use rapid-acting insulin such as insulin aspart (NovoLog) and insulin lispro (Humalog).
+		</p>
+		<br><br>
+		<h2>Regular Insulin</h2>
+		<p>
+			For <b>regular</b> insulin, use the "1800 rule". This tells you how much your blood sugar will drop for each unit of <b>regular</b> insulin you take.
+			<br><br>
+			For example, if your total daily dose of <b>regular</b> insulin (<math><msub><mtext>TDD</mtext><mtext>regular</mtext></msub></math>) is 30 units, divide 1800 by 30. This equals 60.
+			<br><br>
+			This means your insulin sensitivity factor to <b>regular</b> insulin is 1:60, or that one unit of <b>regular</b> insulin will lower your blood sugar by about 60 mg/dL.
+		</p>
+		<br><br>
+		<center>
+			<math>
+				<mtext>ISF</mtext><mo>=</mo><mfrac><mn>1800</mn><msub><mtext>TDD</mtext><mtext>regular</mtext></msub></mfrac>
+			</math>
+		</center>
+		<br><br>
+		<h2>Rapid-acting Insulin</h2>
+		<p>
+			For <b>rapid-acting</b> insulin, use the "1500 rule". This tells you how much your blood sugar will drop for each unit of <b>rapid-acting</b> insulin you take.
+			<br><br>
+			For example, if your total daily dose of <b>rapid-acting</b> insulin (<math><msub><mtext>TDD</mtext><mtext>rapid</mtext></msub></math>) is 30 units, divide 1500 by 30. This equals 50.
+			<br><br>
+			This means your insulin sensitivity factor to <b>rapid-acting</b> insulin is 1:50, or that one unit of <b>rapid-acting</b> insulin will lower your blood sugar by about 50 mg/dL.
+		</p>
+		<br>
+		<center>
+			<math>
+				<mtext>ISF</mtext><mo>=</mo><mfrac><mn>1500</mn><msub><mtext>TDD</mtext><mtext>rapid</mtext></msub></mfrac>
+			</math>
+		</center>
+		<br><br><br>
+		<h1>How Do You Determine Your Insulin Dosage?</h1>
+		<p>
+			Once you know how sensitive you are to insulin, you can figure out how much insulin you need to give yourself to lower your blood sugar by a certain amount.
+			<br><br>
+			For example, if your blood sugar is 200 mg/dL and you'd like to use your <b>rapid-acting</b> insulin to lower it to 125 mg/dL, you'd need your blood sugar to drop by 75 mg/dL.
+		</p>
+		<br><br>
+		<center>
+			<math>
+				<mtext>drop</mtext><mo>=</mo><mtext>current</mtext><mo>-</mo><mtext>target</mtext>
+			</math>
+		</center>
+		<br><br>
+		<p>
+			From the insulin sensitivity factor calculation, you know that your <b>rapid-acting</b> insulin sensitivity factor is 1:60. In other words, one unit of <b>rapid-acting</b> insulin lowers your blood sugar by about 60 mg/dL.
+			<br><br>
+			You'll need to divide the number of mg/dL you want to lower, which is 75, by your sensitivity factor, which is 60.
+		</p>
+		<br><br>
+		<center>
+			<math>
+				<mtext>units</mtext><mo>=</mo><mfrac><mtext>drop</mtext><mtext>ISF</mtext></mfrac>
+			</math>
+		</center>
+		<br><br>
+		<h1>Let's Put It All Together</h1>
+		<p>
+			We can roll all this math into two simple equations (one for regular, one for rapid-acting insulin) to quickly compute our ISF and how much insulin we need in order to bring down our blood sugar.			
+		</p>
+		<br><br>
+		<center>
+			<math>
+				<msub><mtext>units</mtext><mtext>regular</mtext></msub><mo>=</mo><mfrac><mrow><mtext>current</mtext><mo>-</mo><mtext>target</mtext></mrow><mrow><mn>1800</mn></mrow></mfrac><mo>*</mo><msub><mtext>TDD</mtext><mtext>regular</mtext></msub>
+			</math>
+			<br><br>
+			<math>
+				<msub><mtext>units</mtext><mtext>rapid</mtext></msub><mo>=</mo><mfrac><mrow><mtext>current</mtext><mo>-</mo><mtext>target</mtext></mrow><mrow><mn>1500</mn></mrow></mfrac><mo>*</mo><msub><mtext>TDD</mtext><mtext>rapid</mtext></msub>
+			</math>
+		</center>
+		<br><br>
+		<h1>Here's a Calculator to Compute Both Your Insulin Sensitivity Factor and Your Insulin Dosage</h1>
+		<center>
+			<input type="radio" id="regular" name="type" value="regular">
+			<label for="regular">Regular</label>
+			<input type="radio" id="rapid" name="type" value="rapid">
+			<label for="rapid">Rapid-acting</label>
+			<br><br>
+			<label for="TDD">TDD (units):</label>
+			<input type="number" id="TDD" name="TDD" min="1" max="1000">
+			<br><br>
+			<label for="current">Current (mg/dL):</label>
+			<input type="number" id="current" name="current" min="0" max="1000">
+			<br><br>
+			<label for="target">Target (mg/dL):</label>
+			<input type="number" id="target" name="target" min="0" max="1000">
+			<br><br><br>
+			<button onclick="computation()">Submit</button>
+			<script>
+				function computation() {
+					var current_input = document.getElementById("current").value;
+					var target_input = document.getElementById("target").value;
+					var TDD_input = document.getElementById("TDD").value;
+					var type_input = document.getElementById("type");
+					if (!current_input || !target_input || !TDD_input) {
+						alert("Please complete all of the fields!");
+					} else if (parseFloat(current_input) < parseFloat(target_input)) {
+						alert("Current blood sugar must be higher than target!");
+					} else if (document.getElementById("regular").checked) {
+						var ISF = 1800.0 / parseFloat(TDD_input);
+						var dose = (parseFloat(current_input) - parseFloat(target_input)) / ISF;
+						alert('Your ISF is: ' + ISF + '\nYour recommended dose of regular insulin is: ' + dose + ' units.');
+					} else if (document.getElementById("rapid").checked) {
+						var ISF = 1500.0 / parseFloat(TDD_input);
+						var dose = (parseFloat(current_input) - parseFloat(target_input)) / ISF;
+						alert('Your ISF is: ' + ISF + '\nYour recommended dose of rapid-acting insulin is: ' + dose + ' units.');
+					}else {
+						alert("Please select an insulin type!");
+					}
+				}
+			</script>
+			<br><br><br>
+			<div id="result"></div>
+		</center>
+		<br><br><br><br>
+		<a href="https://www.dshs.texas.gov/sites/default/files/txdiabetes/toolkit/Ins_InsulinPumpTherapy.pdf" target="_blank">Ref.</a>
+	</body>
+</html>
