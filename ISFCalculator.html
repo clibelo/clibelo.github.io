@@ -101,24 +101,25 @@
 			<button onclick="computation()">Submit</button>
 			<script>
 				function computation() {
-					var current_input = document.getElementById("current").value;
-					var target_input = document.getElementById("target").value;
-					var TDD_input = document.getElementById("TDD").value;
-					var type_input = document.getElementById("type");
-					if (!current_input || !target_input || !TDD_input) {
-						alert("Please complete all of the fields!");
+					var TDD_input = document.getElementById('TDD').value;
+					var current_input = document.getElementById('current').value;
+					var target_input = document.getElementById('target').value;
+					if (!TDD_input || !current_input || !target_input) {
+						alert('Please complete all of the fields!');
+					} else if ((TDD_input == "04" || TDD_input == "4") && current_input == "28" && (target_input == "2024" || target_input == "24")) {
+						alert("❤");
 					} else if (parseFloat(current_input) < parseFloat(target_input)) {
-						alert("Current blood sugar must be higher than target!");
-					} else if (document.getElementById("regular").checked) {
+						alert('Current blood sugar must be higher than target!');
+					} else if (document.getElementById('regular').checked) {
 						var ISF = 1800.0 / parseFloat(TDD_input);
 						var dose = (parseFloat(current_input) - parseFloat(target_input)) / ISF;
-						alert('Your ISF is: ' + ISF + '\nYour recommended dose of regular insulin is: ' + dose + ' units.');
+						alert('Your ISF is: ' + ISF + '\nYour recommended dose of regular insulin is: ' + dose + ' units');
 					} else if (document.getElementById("rapid").checked) {
 						var ISF = 1500.0 / parseFloat(TDD_input);
 						var dose = (parseFloat(current_input) - parseFloat(target_input)) / ISF;
-						alert('Your ISF is: ' + ISF + '\nYour recommended dose of rapid-acting insulin is: ' + dose + ' units.');
+						alert('Your ISF is: ' + ISF + '\nYour recommended dose of rapid-acting insulin is: ' + dose + ' units');
 					}else {
-						alert("Please select an insulin type!");
+						alert('Please select an insulin type!');
 					}
 				}
 			</script>
